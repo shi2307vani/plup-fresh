@@ -112,16 +112,32 @@ export default function BottleWallHero() {
                 {row.map((id, i) => {
                   const p = products[id];
                   const demo = r === 0 && i === 1;
+                  const isPeach = (r + i) % 2 === 1;
+                  const canSrc = isPeach ? "/images/adler/can-peach.png" : "/images/adler/can-berry.png";
+                  const canName = isPeach ? "ADLER Peach Sparks Can" : "ADLER Mix Berry Sparks Can";
                   return (
                     <a
                       key={`${id}-${i}`}
                       href="#flavours"
                       className="pf-wall-item"
                       data-cursor="Shop"
-                      {...(demo ? { "data-hover-demo": "", "data-hover-hold": "1.0", "data-hover-label": "Hero bottle" } : {})}
-                      aria-label={p.name}
+                      {...(demo ? { "data-hover-demo": "", "data-hover-hold": "1.0", "data-hover-label": "Hero can" } : {})}
+                      aria-label={canName}
                     >
-                      <Bottle juice={p.juice} word={p.word} eager />
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={canSrc}
+                        alt={canName}
+                        draggable={false}
+                        loading="eager"
+                        decoding="async"
+                        style={{
+                          display: "block",
+                          width: "100%",
+                          height: "auto",
+                          userSelect: "none",
+                        }}
+                      />
                     </a>
                   );
                 })}
