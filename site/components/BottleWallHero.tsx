@@ -133,10 +133,8 @@ export default function BottleWallHero() {
                         decoding="async"
                         style={{
                           display: "block",
-                          width: "260%",
-                          maxWidth: "none",
+                          width: "100%",
                           height: "auto",
-                          marginLeft: "-80%",
                           userSelect: "none",
                         }}
                       />
