@@ -113,7 +113,7 @@ export default function BottleWallHero() {
                   const p = products[id];
                   const demo = r === 0 && i === 1;
                   const isPeach = (r + i) % 2 === 1;
-                  const canSrc = isPeach ? "/images/adler/can-peach.png" : "/images/adler/can-berry.png";
+                  const canSrc = isPeach ? "/images/adler/can1.png" : "/images/adler/can2.png";
                   const canName = isPeach ? "ADLER Peach Sparks Can" : "ADLER Mix Berry Sparks Can";
                   return (
                     <a
@@ -133,8 +133,10 @@ export default function BottleWallHero() {
                         decoding="async"
                         style={{
                           display: "block",
-                          width: "100%",
+                          width: "260%",
+                          maxWidth: "none",
                           height: "auto",
+                          marginLeft: "-80%",
                           userSelect: "none",
                         }}
                       />
